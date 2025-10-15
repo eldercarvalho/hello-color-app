@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hello_color_app/ui/features/home/home_page.dart';
 import 'package:hello_color_app/ui/features/home/widgets/color_panel.dart';
-import 'package:hello_color_app/ui/shared/extensions/color.dart';
+import 'package:hello_color_app/ui/shared/extensions/color_extension.dart';
 
 void main() {
   group('HomePage', () {
@@ -12,6 +12,7 @@ void main() {
       final containerFinder = find.byType(AnimatedContainer);
       final colorContainer = tester.widget<AnimatedContainer>(containerFinder);
       final decoration = colorContainer.decoration as BoxDecoration?;
+
       return decoration?.color;
     }
 

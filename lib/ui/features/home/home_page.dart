@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hello_color_app/ui/features/home/widgets/color_panel.dart';
-import 'package:hello_color_app/ui/shared/extensions/color.dart';
+import 'package:hello_color_app/ui/shared/extensions/color_extension.dart';
 import 'package:hello_color_app/ui/shared/resources/fonts.dart';
 
 /// The home page for the Hello Color application.

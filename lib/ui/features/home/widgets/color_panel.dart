@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_color_app/ui/features/home/widgets/color_hex_badge.dart';
-import 'package:hello_color_app/ui/shared/extensions/color.dart';
+import 'package:hello_color_app/ui/shared/extensions/color_extension.dart';
 
 /// The color panel for the Hello Color application.
 class ColorPanel extends StatelessWidget {
