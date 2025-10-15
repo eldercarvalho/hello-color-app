@@ -19,6 +19,7 @@ extension ColorExtension on Color {
     final red = random.nextInt(maxValue);
     final green = random.nextInt(maxValue);
     final blue = random.nextInt(maxValue);
+
     return Color.fromARGB(maxValue, red, green, blue);
   }
 
@@ -26,6 +27,7 @@ extension ColorExtension on Color {
   String toHexString() {
     const radix = 16;
     const substring = 2;
+
     return '#${toARGB32().toRadixString(radix).substring(substring)}'
         .toUpperCase();
   }
