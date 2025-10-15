@@ -11,17 +11,17 @@ void main() {
     Color? getCurrrentColor(WidgetTester tester) {
       final containerFinder = find.byType(AnimatedContainer);
       final colorContainer = tester.widget<AnimatedContainer>(containerFinder);
-      final decoration = colorContainer.decoration as BoxDecoration;
-      return decoration.color;
+      final decoration = colorContainer.decoration as BoxDecoration?;
+      return decoration?.color;
     }
 
     testWidgets('should init with correct color', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
       expect(getCurrrentColor(tester), initialColor);
     });
 
     testWidgets('should change color when tapped', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
       await tester.tap(find.byType(ColorPanel));
       await tester.pump();
@@ -29,8 +29,10 @@ void main() {
       expect(getCurrrentColor(tester), isNot(initialColor));
     });
 
-    testWidgets('should show reset button when tap count is greater than 3', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+    testWidgets('should show reset button when tap count is greater than 3', (
+      tester,
+    ) async {
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
       expect(find.byIcon(Icons.refresh), findsNothing);
 
@@ -44,7 +46,7 @@ void main() {
     });
 
     testWidgets('should show the correct tap count', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
       expect(find.text('Tap count: 0'), findsOneWidget);
 
@@ -57,7 +59,7 @@ void main() {
     });
 
     testWidgets('should show the color in hex format', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
       expect(find.text(initialColor.toHexString()), findsOneWidget);
 
@@ -67,8 +69,10 @@ void main() {
       expect(find.text(initialColor.toHexString()), findsNothing);
     });
 
-    testWidgets('should reset the color when reset button is tapped', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: HomePage()));
+    testWidgets('should reset the color when reset button is tapped', (
+      tester,
+    ) async {
+      await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
       await tester.tap(find.byType(ColorPanel));
       await tester.tap(find.byType(ColorPanel));

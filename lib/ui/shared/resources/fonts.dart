@@ -1,5 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 
+/// The list of fonts used in the application.
 final fonts = [
   GoogleFonts.roboto(),
   GoogleFonts.bungeeShade(),

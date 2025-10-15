@@ -1,12 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:hello_color_app/ui/features/home/widgets/color_panel.dart';
+import 'package:hello_color_app/ui/shared/extensions/color.dart';
+import 'package:hello_color_app/ui/shared/resources/fonts.dart';
 
-import '../../shared/extensions/color.dart';
-import '../../shared/resources/fonts.dart';
-import 'widgets/color_panel.dart';
-
+/// The home page for the Hello Color application.
 class HomePage extends StatefulWidget {
+  /// The constructor for the HomePage widget.
   const HomePage({super.key});
 
   @override
@@ -49,8 +50,8 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Visibility(
         visible: _tapCount > _tapsToShowResetButton,
         child: FloatingActionButton(
-          child: Icon(Icons.refresh, size: 30, color: _color),
           onPressed: _reset,
+          child: Icon(Icons.refresh, size: 30, color: _color),
         ),
       ),
     );

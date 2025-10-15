@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "dart.formatOnSave": true,
+  "dart.lineLength": 80,
+  "dart.analyzerExtraArgs": ["--fatal-infos", "--fatal-warnings"]
+}
